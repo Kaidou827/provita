@@ -1,0 +1,68 @@
+/* ==========================================================================
+   ProVita Akademie – Design Tokens
+   Akzentfarbe: ausschliesslich #2c7a4e. Keine Gradients. Eine Schriftfamilie.
+   ========================================================================== */
+
+:root {
+  /* ---- Farbe --------------------------------------------------------------
+     Neutrale sind minimal grün abgetönt, damit alles aus einer Familie kommt.
+     Der Akzent ist die einzige Farbe im Blatt.                              */
+  --c-accent: #2c7a4e;
+  --c-accent-deep: #1f5b39; /* Shade des Akzents – nur für Hover/Active */
+  --c-accent-wash: rgba(44, 122, 78, 0.07); /* Flächige Tönung */
+  --c-accent-line: rgba(44, 122, 78, 0.28);
+
+  --c-ink: #131c17; /* Überschriften, Haupttext */
+  --c-ink-2: #3c4a42; /* Fließtext */
+  --c-muted: #64726a; /* Meta, Labels */
+  --c-paper: #ffffff;
+  --c-paper-2: #f4f6f4; /* Sektionsfüllung */
+  --c-paper-3: #eceff0;
+  --c-rule: #dde3df; /* Haarlinien */
+  --c-rule-strong: #c4ccc7;
+
+  /* ---- Typografie ---------------------------------------------------------
+     Eine Familie, drei Rollen: Display (700, engere Laufweite),
+     Body (400/500), Utility (500 uppercase, weite Laufweite, tabellarisch).  */
+  --f-sans: 'Google Sans', 'Google Sans Text', system-ui, -apple-system,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  --t-display-1: clamp(2.02rem, 1.1rem + 3.6vw, 4rem);
+  --t-display-2: clamp(1.85rem, 1.25rem + 2vw, 2.7rem);
+  --t-h3: clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem);
+  --t-lead: clamp(1.06rem, 1rem + 0.4vw, 1.28rem);
+  --t-body: 1rem;
+  --t-small: 0.9rem;
+  --t-utility: 0.735rem;
+
+  --tr-tight: -0.022em;
+  --tr-utility: 0.1em;
+
+  /* ---- Raster & Rhythmus ------------------------------------------------- */
+  --w-page: 1220px;
+  --w-prose: 66ch;
+  --rail: 232px;
+  --gap-rail: 56px;
+
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+
+  --pad-x: clamp(20px, 4vw, 48px);
+  --sec-y: clamp(56px, 7vw, 104px);
+
+  /* ---- Form ---------------------------------------------------------------
+     Kanten sind fast rechtwinklig: der Look eines amtlichen Formulars.       */
+  --r-0: 0px;
+  --r-1: 2px;
+  --r-2: 4px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur: 260ms;
+}
