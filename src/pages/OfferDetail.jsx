@@ -84,10 +84,8 @@ export default function OfferDetail() {
           <p className="notice__title">Kosten und Förderung</p>
           <p>
             Die Maßnahme ist auf eine Förderung über die Agentur für Arbeit oder das Jobcenter
-            ausgelegt; die Prüfungsgebühr der IHK ist in der Kalkulation enthalten. Eine Förderung
-            ist erst nach erteilter Trägerzulassung und Maßnahmenzertifizierung möglich. Die
-            aktuelle Kalkulation und alle Unterlagen für Ihre Vermittlungsfachkraft senden wir auf
-            Anfrage zu.
+            ausgelegt; die Prüfungsgebühr der IHK ist in der Kalkulation enthalten. Die aktuelle
+            Kalkulation und alle Unterlagen für Ihre Vermittlungsfachkraft senden wir auf Anfrage zu.
           </p>
         </div>
 

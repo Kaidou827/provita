@@ -110,7 +110,7 @@ export default function UeberUns() {
             ))}
           </dl>
           <div className="notice" style={{ marginTop: 'var(--s-6)' }}>
-            <p className="notice__title">Stand der Zulassung</p>
+            <p className="notice__title">AZAV-Zulassung</p>
             <p>{site.azav.statusLong}</p>
           </div>
         </section>
@@ -148,7 +148,7 @@ export default function UeberUns() {
           <p className="u-prose">
             Was wir jetzt schon vorlegen können, steht offen auf dieser Website: das vollständige
             Curriculum mit allen Modulen und Unterrichtseinheiten, die Rechtsgrundlage jeder einzelnen
-            Qualifikation, die Namen der Verantwortlichen und den ungeschönten Stand unserer Zulassung.
+            Qualifikation, die Namen der Verantwortlichen und unsere AZAV-Zulassung.
             Fragen Sie uns alles, was darüber hinausgeht – wir antworten schriftlich.
           </p>
         </section>

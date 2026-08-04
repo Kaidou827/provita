@@ -56,12 +56,6 @@ export default function Home() {
             Maßnahme im Detail ansehen
           </Link>
         </div>
-
-        <p className="hero__status">
-          <strong>Stand der Zulassung:</strong> {site.azav.statusShort}. Eine Förderung über
-          Bildungsgutschein oder Aktivierungs- und Vermittlungsgutschein ist erst nach erteilter
-          Zulassung möglich. Wir sagen Ihnen im Vorgespräch offen, wo wir stehen.
-        </p>
       </section>
 
       <section className="wrap">

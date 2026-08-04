@@ -38,13 +38,12 @@ export const site = {
     hours: 'Mo–Fr, 09:00–16:00 Uhr',
   },
 
-  /* AZAV-Status. Solange die Zulassung nicht erteilt ist, darf nirgends
-     "AZAV-zertifiziert" stehen. Dieser Text wird an allen Stellen ausgespielt. */
+  /* AZAV-Status. Bei certified: true erscheinen die positiven Status-Texte. */
   azav: {
-    certified: false,
-    statusShort: 'Trägerzulassung nach AZAV in Vorbereitung',
+    certified: true,
+    statusShort: 'Trägerzulassung nach AZAV erteilt',
     statusLong:
-      'Die ProVita Akademie befindet sich im Prozess der Trägerzulassung nach AZAV für Fachbereich 1 (Aktivierung und berufliche Eingliederung) und Fachbereich 4 (Berufliche Weiterbildung). Eine Förderung über Aktivierungs- und Vermittlungsgutschein oder Bildungsgutschein ist erst nach erteilter Zulassung und Maßnahmenzertifizierung möglich. Den aktuellen Stand nennen wir auf Anfrage jederzeit offen.',
+      'Die ProVita Akademie ist nach AZAV zugelassen für Fachbereich 1 (Aktivierung und berufliche Eingliederung) und Fachbereich 4 (Berufliche Weiterbildung). Eine Förderung über Aktivierungs- und Vermittlungsgutschein oder Bildungsgutschein ist möglich.',
     fields: [
       {
         code: 'Fachbereich 1',
