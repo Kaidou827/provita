@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo.jsx';
 import PageShell from '../components/PageShell.jsx';
 import { site, fullAddress } from '../data/site.js';
+import { leitbild } from '../data/leitbild.js';
 import { totalUe } from '../data/curriculum.js';
 import { paths } from '../routes.js';
 
@@ -10,7 +11,7 @@ export default function UeberUns() {
     <>
       <Seo
         title="Über uns"
-        description={`Leitbild, Werte und Qualitätsmanagement der ${site.academy}: wer wir sind, für wen wir arbeiten und wie wir Qualität sichern.`}
+        description={`Leitbild, Werte und Qualitätsmanagement der ${site.academy}: wer wir sind, für wen wir arbeiten und wie wir Qualität sichern. Das vollständige Leitbild steht offen auf der Seite.`}
       />
 
       <PageShell
@@ -51,90 +52,80 @@ export default function UeberUns() {
           </p>
         </section>
 
-        <section>
-          <h2 style={{ marginBottom: 'var(--s-4)' }}>Unser Leitbild</h2>
-          <p className="u-prose">
-            Im Mittelpunkt aller Tätigkeiten steht die Teilnehmerin und der Teilnehmer. Ein
-            partnerschaftlicher Umgang miteinander ist für uns die Grundlage: Wir behandeln jede und
-            jeden mit Respekt und Wertschätzung, unabhängig davon, wie der Weg in die Arbeitslosigkeit
-            verlief.
-          </p>
-          <p className="u-prose">
-            Unsere Mitarbeiterinnen und Mitarbeiter sind das Fundament dieser Arbeit. Wir fördern sie
-            durch regelmäßige Weiterbildung, schaffen ein Arbeitsumfeld aus gegenseitigem Vertrauen und
-            fordern gleichzeitig hohe fachliche und menschliche Standards ein. Lernbereitschaft, aktive
-            Mitgestaltung und offener Austausch sorgen für einen permanenten Verbesserungsprozess.
-          </p>
-          <p className="u-prose">
-            Gegenüber Jobcentern und Agenturen für Arbeit verstehen wir uns als verlässlicher Partner.
-            Verlässlich heißt konkret: erreichbar, dokumentiert und ehrlich – auch dann, wenn eine
-            Teilnahme aus unserer Sicht nicht der richtige nächste Schritt ist.
-          </p>
-          <p className="btn-row" style={{ marginTop: 'var(--s-5)' }}>
-            <a
-              className="btn btn--line"
-              href="/Leitbild_ProVita_Akademie.docx"
-              download="Leitbild_ProVita_Akademie.docx"
-            >
-              Leitbild herunterladen (DOCX)
-            </a>
-          </p>
-        </section>
+        {/* ---- Leitbild vollstaendig, nicht als Download versteckt --------- */}
+        <section id="leitbild">
+          <div className="sec-head" style={{ marginBottom: 'var(--s-6)' }}>
+            <h2>Unser Leitbild – vollständig</h2>
+            <p>
+              Das Leitbild ist das Dokument, an dem uns die fachkundige Stelle und jedes Jobcenter
+              messen kann. Deshalb steht es hier im Wortlaut auf der Seite und nicht nur als Datei
+              zum Herunterladen.
+            </p>
+          </div>
 
-        <section>
-          <h2 style={{ marginBottom: 'var(--s-4)' }}>Eingliederung in den Arbeitsmarkt</h2>
-          <p className="u-prose">
-            Ein Zertifikat ist kein Arbeitsvertrag. Wir sehen es deshalb als unsere Verpflichtung an,
-            unsere Absolventinnen und Absolventen über den Abschluss hinaus zu begleiten: bei den
-            Bewerbungsunterlagen, im Kontakt zu Sicherheitsdienstleistern in der Region und beim
-            Übergang in die neue Beschäftigung.
-          </p>
-          <p className="u-prose">
-            Wieder Teil des Berufslebens zu sein und die eigene Lebensqualität dauerhaft zu verbessern –
-            das ist das Ziel, das wir gemeinsam verfolgen.
-          </p>
-        </section>
+          <article className="doc">
+            <header className="doc__head">
+              <p className="doc__kicker">Dokument · Leitbild</p>
+              <h3 className="doc__title">{leitbild.title}</h3>
+              <dl className="doc__meta">
+                {leitbild.header.map((row) => (
+                  <div key={row.label}>
+                    <dt>{row.label}</dt>
+                    <dd>{row.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </header>
 
-        <section>
-          <h2 style={{ marginBottom: 'var(--s-5)' }}>Die beiden AZAV-Fachbereiche</h2>
-          <dl className="specs">
-            {site.azav.fields.map((field) => (
-              <div className="specs__row" key={field.code}>
-                <dt>{field.code}</dt>
-                <dd>
-                  <strong>{field.title}</strong>
-                  <br />
-                  {field.text}
-                </dd>
-              </div>
+            <div className="doc__intro">
+              {leitbild.intro.map((paragraph) => (
+                <p className="u-prose" key={paragraph.slice(0, 40)}>
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            {leitbild.sections.map((section) => (
+              <section className="doc__section" key={section.heading}>
+                <h3>{section.heading}</h3>
+                {section.text.map((paragraph) => (
+                  <p className="u-prose" key={paragraph.slice(0, 40)}>
+                    {paragraph}
+                  </p>
+                ))}
+
+                {section.people && (
+                  <div className="people">
+                    {site.qm.map((person) => (
+                      <div className="people__row" key={person.name}>
+                        <div>
+                          <div className="people__name">{person.name}</div>
+                          <div className="people__role">{person.role}</div>
+                        </div>
+                        <p className="people__text">{person.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </section>
             ))}
-          </dl>
+
+            <footer className="doc__foot">
+              <p className="ledger__legend">{site.documentStatus}</p>
+              <a
+                className="btn btn--line btn--sm"
+                href={leitbild.file}
+                download="Leitbild_ProVita_Akademie.docx"
+              >
+                Als DOCX herunterladen
+              </a>
+            </footer>
+          </article>
+
           <div className="notice" style={{ marginTop: 'var(--s-6)' }}>
             <p className="notice__title">AZAV-Zulassung</p>
             <p>{site.azav.statusLong}</p>
           </div>
-        </section>
-
-        <section>
-          <h2 style={{ marginBottom: 'var(--s-4)' }}>Qualitätssicherung</h2>
-          <p className="u-prose" style={{ marginBottom: 'var(--s-6)' }}>
-            Überwachung, Einschätzung und Weiterentwicklung des Leitbildes nimmt die Geschäftsführung
-            jährlich in der Managementbewertung vor. Die Qualitätsmanagement-Beauftragten unterstützen
-            sie bei der Pflege und kontinuierlichen Weiterentwicklung des Qualitätsmanagementsystems.
-          </p>
-
-          <div className="people">
-            {site.qm.map((person) => (
-              <div className="people__row" key={person.name}>
-                <div>
-                  <div className="people__name">{person.name}</div>
-                  <div className="people__role">{person.role}</div>
-                </div>
-                <p className="people__text">{person.text}</p>
-              </div>
-            ))}
-          </div>
-          <p className="ledger__legend">{site.documentStatus}</p>
         </section>
 
         <section>
@@ -147,8 +138,9 @@ export default function UeberUns() {
           </p>
           <p className="u-prose">
             Was wir jetzt schon vorlegen können, steht offen auf dieser Website: das vollständige
-            Curriculum mit allen Modulen und Unterrichtseinheiten, die Rechtsgrundlage jeder einzelnen
-            Qualifikation, die Namen der Verantwortlichen und unsere AZAV-Zulassung.
+            Leitbild im Wortlaut, das vollständige Curriculum mit allen Modulen und
+            Unterrichtseinheiten, die Rechtsgrundlage jeder einzelnen Qualifikation, die Namen der
+            Verantwortlichen und unsere AZAV-Zulassung.
             Fragen Sie uns alles, was darüber hinausgeht – wir antworten schriftlich.
           </p>
         </section>
