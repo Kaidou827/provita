@@ -130,13 +130,19 @@ Datenschutzerklärung ergänzen.
 
 ## Deployment
 
+**provita-akademie.de läuft auf Vercel.** Maßgeblich ist deshalb
+`vercel.json` – dort stehen der SPA-Fallback und die 301-Umleitungen der alten
+Maßnahmen-URLs.
+
 Statisches Hosting genügt. Wichtig ist nur, dass alle Pfade auf `index.html`
 zeigen, sonst laufen die Unterseiten bei direktem Aufruf oder Reload in einen
-404 des Servers.
+404 des Servers – genau das war der Grund, warum `/ueber-uns` live 404 lieferte,
+während die Route lokal funktionierte.
 
-- **Netlify:** `public/_redirects` liegt bereits bei.
-- **Vercel:** `vercel.json` mit
-  `{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }`
+- **Vercel (aktiv):** `vercel.json`
+- **Netlify:** `public/_redirects` liegt bereits bei – von Vercel ignoriert,
+  bleibt nur für einen möglichen Umzug liegen. Änderungen an Umleitungen immer
+  in **beiden** Dateien nachziehen.
 - **Apache:** `.htaccess` mit `FallbackResource /index.html`
 - **Nginx:** `try_files $uri $uri/ /index.html;`
 

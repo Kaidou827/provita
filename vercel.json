@@ -1,0 +1,26 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/massnahmen/sachkundepruefung-34a",
+      "destination": "/massnahmen/fachkraft-schutz-sicherheit-tq1",
+      "permanent": true
+    },
+    {
+      "source": "/massnahmen/brandschutzhelfer",
+      "destination": "/massnahmen/brandschutz-evakuierungshelfer",
+      "permanent": true
+    },
+    {
+      "source": "/massnahmen/evakuierungshelfer",
+      "destination": "/massnahmen/brandschutz-evakuierungshelfer",
+      "permanent": true
+    },
+    {
+      "source": "/massnahmen/waffensachkunde-7-waffg",
+      "destination": "/massnahmen",
+      "permanent": true
+    }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
