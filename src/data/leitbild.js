@@ -14,14 +14,16 @@
       site.legal.entity gezogen, damit auf der Seite nur eine Gesellschaft
       steht (siehe Hinweisblock im Impressum).
    2. AZAV-Status: die DOCX sagt "befindet sich im Prozess der
-      AZAV-Zertifizierung". Hier wird site.azav.statusShort gezogen.
-      Das ist ein echter Sachwiderspruch – entweder wird die DOCX
-      aktualisiert oder site.azav.certified muss zurueck auf false.
+      AZAV-Zertifizierung". Hier wird site.azav.statusSentence gezogen, das
+      am Schalter azavCertified in site.js haengt. Solange der auf false
+      steht, sagen DOCX und Seite dasselbe; wird die Zulassung erteilt,
+      zieht die Seite automatisch nach und die DOCX muss folgen.
    3. Wortwahl: die DOCX schreibt "Ausbildung" bzw. "anerkannte
-      Berufsausbildungen". Die Seite erklaert an zwei Stellen ausdruecklich,
-      dass sie das Wort nicht benutzt – und die Sachkundepruefung nach
-      § 34a GewO ist kein Berufsabschluss. Daher hier "Qualifizierung",
-      "Weiterbildung" und "Kammerpruefung".
+      Berufsausbildungen". Die Maßnahme ist eine Teilqualifikation nach dem
+      Ausbildungsrahmenplan Fachkraft für Schutz und Sicherheit und fuehrt
+      NICHT zum Berufsabschluss – die Seite sagt das an drei Stellen
+      ausdruecklich. Daher hier "Qualifizierung", "Weiterbildung" und
+      "Kammerpruefung".
    ========================================================================== */
 
 import { site } from './site.js';
@@ -46,7 +48,7 @@ export const leitbild = {
     {
       heading: 'Firmenprofil',
       text: [
-        `Die ProVita Akademie ist eine Bildungseinrichtung der ${site.legal.entity}. Für die Fachbereiche 1 und 4 gilt: ${site.azav.statusShort}. Wir spezialisieren uns auf die Qualifizierung von Sicherheitsfachkräften gemäß § 34a GewO sowie auf Fort- und Weiterbildungen im Sicherheitsbereich. Unser Ziel ist es, als zugelassener Träger nach Fachbereich 1 und Fachbereich 4 der AZAV anerkannte und praxisnahe Qualifizierungen anzubieten.`,
+        `Die ProVita Akademie ist eine Bildungseinrichtung der ${site.legal.entity}. ${site.azav.statusSentence} Wir spezialisieren uns auf die Qualifizierung von Sicherheitsfachkräften gemäß § 34a GewO sowie auf Fort- und Weiterbildungen im Sicherheitsbereich. Unser Ziel ist es, als zugelassener Träger nach Fachbereich 1 und Fachbereich 4 der AZAV anerkannte und praxisnahe Qualifizierungen anzubieten.`,
         'Unser Anspruch ist es, als wachsende Akademie kontinuierlich neue Bildungsangebote zu entwickeln, die sich an den realen Anforderungen des Arbeitsmarktes orientieren. In neuen und teilweise ungewöhnlichen Trends sehen wir eine Chance, unsere hohen Ziele für unsere Teilnehmerinnen und Teilnehmer zu erreichen. Rechtzeitige Anpassung an den sich ständig verändernden Markt ist für uns selbstverständlich.',
       ],
     },

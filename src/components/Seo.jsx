@@ -9,7 +9,7 @@ export default function Seo({ title, description, jsonLd }) {
   useEffect(() => {
     document.title = title
       ? `${title} – ${site.academy}`
-      : `${site.academy} – Vorbereitung auf die Sachkundeprüfung § 34a GewO`
+      : `${site.academy} – Fachkraft für Schutz und Sicherheit, Teilqualifikation 1`
 
     if (description) {
       let tag = document.querySelector('meta[name="description"]')

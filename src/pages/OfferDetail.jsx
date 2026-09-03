@@ -56,6 +56,23 @@ export default function OfferDetail() {
           </section>
         ))}
 
+        {offer.results && (
+          <section>
+            <h2 style={{ marginBottom: 'var(--s-5)' }}>Was am Ende in der Hand liegt</h2>
+            <ol className="steps">
+              {offer.results.map((result, i) => (
+                <li key={result.title}>
+                  <span className="steps__no u-num">{String(i + 1).padStart(2, '0')}</span>
+                  <div className="steps__body">
+                    <h4>{result.title}</h4>
+                    <p>{result.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
         {offer.steps && (
           <section>
             <h2 style={{ marginBottom: 'var(--s-5)' }}>Ablauf</h2>
@@ -75,7 +92,7 @@ export default function OfferDetail() {
 
         {offer.lead && (
           <section>
-            <h2 style={{ marginBottom: 'var(--s-5)' }}>Module und Unterrichtseinheiten</h2>
+            <h2 style={{ marginBottom: 'var(--s-5)' }}>Blöcke und Unterrichtseinheiten</h2>
             <ModuleLedger />
           </section>
         )}
@@ -83,9 +100,11 @@ export default function OfferDetail() {
         <div className="notice notice--plain">
           <p className="notice__title">Kosten und Förderung</p>
           <p>
-            Die Maßnahme ist auf eine Förderung über die Agentur für Arbeit oder das Jobcenter
-            ausgelegt; die Prüfungsgebühr der IHK ist in der Kalkulation enthalten. Die aktuelle
-            Kalkulation und alle Unterlagen für Ihre Vermittlungsfachkraft senden wir auf Anfrage zu.
+            Es handelt sich um eine Maßnahme der beruflichen Weiterbildung; sie ist auf eine
+            Förderung über Bildungsgutschein nach §§ 81 ff. SGB III durch die Agentur für Arbeit
+            oder das Jobcenter ausgelegt. Die Prüfungsgebühr der IHK ist in der Kalkulation
+            enthalten. {site.azav.fundingShort}. Die aktuelle Kalkulation und alle Unterlagen für
+            Ihre Vermittlungsfachkraft senden wir auf Anfrage zu.
           </p>
         </div>
 

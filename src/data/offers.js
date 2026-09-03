@@ -2,44 +2,79 @@
    Maßnahmen und Zusatzqualifikationen.
    Eine Quelle für: Übersichtsseite, Unterseiten, Navigation, Brotkrumen.
    `basis` ist bewusst die Rechts- bzw. Normgrundlage – das ist die Angabe,
-   die Fallmanagerinnen und Auditoren zuerst suchen.
+   die Fallmanagerinnen und Auditoren zuerst suchen. Wo es keine gesetzliche
+   Grundlage gibt, steht das auch so da.
+
+   Hauptmaßnahme ist die Teilqualifikation 1 nach dem Ausbildungsrahmenplan
+   Fachkraft für Schutz und Sicherheit. Die Waffensachkunde nach § 7 WaffG ist
+   NICHT Teil dieser Maßnahme – bitte auch künftig nicht wieder aufnehmen,
+   ohne dass sie im Curriculum und in der Zulassung steht.
    ========================================================================== */
 
 export const offers = [
   {
-    slug: 'sachkundepruefung-34a',
+    slug: 'fachkraft-schutz-sicherheit-tq1',
     lead: true,
     kicker: 'Hauptmaßnahme',
-    title: 'Vorbereitung auf die IHK-Sachkundeprüfung nach § 34a GewO',
-    short: 'Sachkundeprüfung § 34a GewO',
-    basis: '§ 34a Gewerbeordnung',
-    scope: '320 Unterrichtseinheiten, 12 Module',
-    format: 'Theorie live online, Praxisanteile in Präsenz',
-    result: 'IHK-Sachkundeprüfung, vier Zusatzqualifikationen, Teilnahmezertifikat',
+    title:
+      'Fachkraft für Schutz und Sicherheit – Teilqualifikation 1 „Personen- und Objektschutz“ (inkl. Vorbereitung auf die IHK-Sachkundeprüfung nach § 34a GewO)',
+    short: 'Teilqualifikation 1 – Personen- und Objektschutz',
+    basis: 'Ausbildungsrahmenplan Fachkraft für Schutz und Sicherheit · § 34a GewO',
+    scope: '1.048 Unterrichtseinheiten in vier Blöcken, dazu 160 Stunden betriebliche Lernphase',
+    format: 'Theorie live online, Praxisbausteine in Präsenz, Praktikum im Betrieb',
+    result:
+      'Teilqualifikation 1 mit Kompetenzfeststellung, IHK-Sachkundeprüfung § 34a GewO, Brandschutz- und Evakuierungshelfer, Erste Hilfe (DGUV), Teilnahmenachweis Awareness',
     summary:
-      'Die vollständige Qualifizierung für den Einstieg in das Bewachungsgewerbe: 320 Unterrichtseinheiten in zwölf Modulen, vier im Kurs enthaltene Zusatzqualifikationen und die Anmeldung zur Prüfung bei der IHK.',
+      'Die erste von mehreren Teilqualifikationen auf dem Weg zur Fachkraft für Schutz und Sicherheit: 1.048 Unterrichtseinheiten in vier Blöcken, die Sachkundeprüfung nach § 34a GewO, drei Zusatzqualifikationen und 160 Stunden betriebliche Lernphase im Sicherheitsunternehmen.',
     intro: [
-      'Die Sachkundeprüfung nach § 34a GewO ist die gesetzliche Voraussetzung für die meisten Tätigkeiten im Bewachungsgewerbe – Kontrollgänge im öffentlichen Verkehrsraum, Schutz vor Ladendiebstahl, Türsteherinnen und Türsteher, Empfangs- und Objektschutzdienste in Einkaufszentren und der Betrieb einer eigenen Sicherheitsfirma.',
-      'Wir bereiten Sie auf diese Prüfung vor. Die Prüfung selbst wird von der Industrie- und Handelskammer abgenommen – wir dürfen sie nicht abnehmen und tun das auch nicht. Anmeldung, Terminierung und Organisation gegenüber der IHK übernehmen wir für Sie, die Prüfungsgebühr ist in der Kalkulation der Maßnahme enthalten.',
-      'Neben der Sachkunde erwerben Sie in derselben Maßnahme vier weitere Qualifikationen, die Arbeitgeber in Stellenanzeigen regelmäßig verlangen. Damit verlassen Sie den Kurs nicht mit einem Nachweis, sondern mit fünf.',
+      'Diese Maßnahme führt zur Teilqualifikation 1 „Personen- und Objektschutz“ – dem ersten von mehreren Bausteinen, aus denen sich der Ausbildungsberuf Fachkraft für Schutz und Sicherheit zusammensetzt. Die Inhalte folgen dem Ausbildungsrahmenplan dieses Berufs, sind aber auf einen abgeschlossenen, für sich verwertbaren Abschnitt zugeschnitten.',
+      'Enthalten ist die vollständige Vorbereitung auf die Sachkundeprüfung nach § 34a GewO, die gesetzliche Voraussetzung für die meisten Tätigkeiten im Bewachungsgewerbe. Die Prüfung selbst nimmt die Industrie- und Handelskammer ab – wir dürfen sie nicht abnehmen und tun das auch nicht. Anmeldung, Terminierung und Organisation gegenüber der IHK übernehmen wir, die Prüfungsgebühr ist in der Kalkulation der Maßnahme enthalten.',
+      'Am Ende steht mehr als ein Nachweis: die Teilqualifikation mit Kompetenzfeststellung, die IHK-Sachkunde, Brandschutz- und Evakuierungshilfe, Erste Hilfe und ein Teilnahmenachweis Awareness – dazu vier Wochen Praxis in einem Sicherheitsunternehmen der Region.',
     ],
+
+    /* Die fuenf Nachweise, die am Ende in der Hand liegen. */
+    results: [
+      {
+        title: 'Teilqualifikation 1 „Personen- und Objektschutz“',
+        text: 'Mit Kompetenzfeststellung am Ende von Block B, dokumentiert nach dem Ausbildungsrahmenplan Fachkraft für Schutz und Sicherheit.',
+      },
+      {
+        title: 'IHK-Sachkundeprüfung nach § 34a GewO',
+        text: 'Abgenommen von der Industrie- und Handelskammer. Anmeldung und Organisation durch ProVita, Prüfungsgebühr in der Kalkulation enthalten.',
+      },
+      {
+        title: 'Brandschutz- und Evakuierungshelfer',
+        text: 'Zertifikat mit praktischer Löschübung in Präsenz, nach ASR A2.2 und den DGUV-Informationen 205-023 und 205-033.',
+      },
+      {
+        title: 'Erste Hilfe gemäß DGUV',
+        text: 'Nachweis als ersthelfende Person, vollständig in Präsenz.',
+      },
+      {
+        title: 'Teilnahmenachweis Awareness',
+        text: 'Nachweis der ProVita Akademie über den Baustein Awareness bei Veranstaltungen.',
+      },
+    ],
+
     sections: [
       {
         heading: 'Was in der Maßnahme enthalten ist',
         list: [
-          'IHK-Sachkundeprüfung nach § 34a GewO – Anmeldung und Organisation durch ProVita, Prüfungsgebühr in der Kalkulation enthalten',
-          'Waffensachkunde nach § 7 WaffG inklusive Prüfung, durchgeführt über unseren Partner IPA Training',
-          'Brandschutzhelfer-Zertifikat mit praktischer Löschübung',
-          'Evakuierungshelfer-Zertifikat',
-          'Erste Hilfe / Ersthelfende Person gemäß DGUV',
-          'Teilnahmezertifikat der ProVita Akademie mit Ausweis von Inhalten und Umfang',
+          'Teilqualifikation 1 „Personen- und Objektschutz“ mit Kompetenzfeststellung – 460 Unterrichtseinheiten nach dem Ausbildungsrahmenplan',
+          'Vorbereitung auf die IHK-Sachkundeprüfung nach § 34a GewO – 400 Unterrichtseinheiten, Anmeldung und Prüfungsgebühr enthalten',
+          'Brandschutz- und Evakuierungshelfer inklusive praktischer Löschübung',
+          'Erste Hilfe / ersthelfende Person gemäß DGUV',
+          'Awareness bei Veranstaltungen mit Teilnahmenachweis',
+          'Digitale Kompetenzen, Fachsprache und Bewerbungscoaching – 107 Unterrichtseinheiten',
+          '160 Stunden betriebliche Lernphase bei einem Partnerunternehmen, danach gemeinsame Auswertung',
         ],
       },
       {
-        heading: 'Lernform: online lernen, Praxis vor Ort',
+        heading: 'Lernform: online lernen, Praxis dort, wo sie hingehört',
         text: [
-          'Der gesamte Theorieteil findet zu 100 Prozent live online statt – mit Dozentin oder Dozent, nicht als Videoarchiv. Sie brauchen dafür einen Rechner oder ein Tablet mit Kamera und eine stabile Internetverbindung. Fehlt Ihnen die Technik, sprechen Sie uns vor Kursbeginn an; das ist lösbar und kein Ausschlussgrund.',
-          'Die praktischen Anteile der Module 6, 10 und 11 – Waffenhandhabung und Schießen, Löschübung, Erste-Hilfe-Praxis – können nicht online stattfinden. Sie werden in Präsenz bei unseren Partnereinrichtungen durchgeführt. Die Termine stehen zu Kursbeginn fest, damit Sie Fahrt und Betreuung planen können.',
+          'Der Theorieteil findet live online statt – mit Dozentin oder Dozent, nicht als Videoarchiv. Sie brauchen dafür einen Rechner oder ein Tablet mit Kamera und eine stabile Internetverbindung. Fehlt Ihnen die Technik, sprechen Sie uns vor Kursbeginn an; das ist lösbar und kein Ausschlussgrund.',
+          'Die Bausteine Brandschutz (Löschübung) und Erste Hilfe finden in Präsenz bei unseren Partnereinrichtungen statt; alle übrigen Praxisanteile laufen live online in Kleingruppen. Die betriebliche Lernphase absolvieren die Teilnehmenden in Sicherheitsunternehmen der Region.',
+          'Die Präsenztermine und der Zeitraum der betrieblichen Lernphase stehen zu Kursbeginn fest, damit Sie Fahrt und Betreuung planen können.',
         ],
       },
       {
@@ -47,10 +82,11 @@ export const offers = [
         text: [
           'Für Menschen in beruflicher Neuorientierung, die einen belastbaren Nachweis brauchen und nicht bloß ein Zertifikat. Vorkenntnisse im Sicherheitsbereich sind nicht erforderlich.',
           'Voraussetzung ist ausreichendes Deutsch, um die Prüfung zu bestehen: die IHK prüft mündlich und schriftlich in deutscher Sprache und ohne Wörterbuch. Wir schätzen das im Vorgespräch gemeinsam mit Ihnen ein und sagen Ihnen ehrlich, wenn ein Sprachkurs der sinnvollere erste Schritt ist.',
-          'Für die Waffensachkunde nach § 7 WaffG gelten zusätzlich die gesetzlichen Anforderungen des Waffengesetzes, insbesondere Mindestalter und persönliche Eignung. Auch das klären wir vorab.',
+          'Weil die Teilqualifikation auf den Ausbildungsrahmenplan aufsetzt, lässt sie sich später um weitere Teilqualifikationen ergänzen. Ein Berufsabschluss als Fachkraft für Schutz und Sicherheit ist damit noch nicht erreicht – dieser Weg bleibt aber offen.',
         ],
       },
     ],
+
     steps: [
       {
         title: 'Vorgespräch',
@@ -65,12 +101,16 @@ export const offers = [
         text: 'Sie erhalten Zugangsdaten für den Online-Unterricht, den Stundenplan, die Präsenztermine und die Lernunterlagen.',
       },
       {
-        title: '320 Unterrichtseinheiten',
-        text: 'Zwölf Module in fester Reihenfolge. Zwischenstandsgespräche gehören dazu, damit niemand still zurückfällt.',
+        title: '1.048 Unterrichtseinheiten in vier Blöcken',
+        text: 'Block A Sachkunde, Block B Teilqualifikation, Block C Zusatzqualifikationen, Block D Übergang in Arbeit. Zwischenstandsgespräche gehören dazu, damit niemand still zurückfällt.',
       },
       {
         title: 'Prüfungen',
-        text: 'Waffensachkunde über IPA Training, danach die Sachkundeprüfung bei der IHK. Modul 12 ist ausschließlich Wiederholung und Prüfungsvorbereitung.',
+        text: 'Die Kompetenzfeststellung zur Teilqualifikation 1 nehmen wir am Ende von Block B ab. Die Sachkundeprüfung nach § 34a GewO nimmt die IHK ab; Anmeldung und Organisation übernehmen wir.',
+      },
+      {
+        title: 'Betriebliche Lernphase',
+        text: '160 Stunden – etwa vier Wochen – in einem Sicherheitsunternehmen der Region. Wir stellen den Kontakt her, begleiten die Phase und werten sie anschließend in Block D gemeinsam aus.',
       },
       {
         title: 'Übergang in Arbeit',
@@ -80,49 +120,19 @@ export const offers = [
   },
 
   {
-    slug: 'waffensachkunde-7-waffg',
+    slug: 'brandschutz-evakuierungshelfer',
     kicker: 'Zusatzqualifikation',
-    title: 'Waffensachkunde nach § 7 WaffG',
-    short: 'Waffensachkunde § 7 WaffG',
-    basis: '§ 7 Waffengesetz',
-    scope: '40 Unterrichtseinheiten (Modul 6)',
-    format: 'Theorie online, Waffenhandhabung und Schießen in Präsenz',
-    result: 'Sachkundenachweis § 7 WaffG, Prüfung über IPA Training',
-    summary:
-      'Rechtliche und praktische Sachkunde im Umgang mit Waffen und Munition, inklusive Prüfung. Enthalten in der Hauptmaßnahme.',
-    intro: [
-      'Bewachungsaufgaben mit Schusswaffe setzen den Sachkundenachweis nach § 7 Waffengesetz voraus. Das Modul umfasst Waffenrecht, Notwehr und Nothilfe, Waffentechnik, Munitionskunde sowie den sicheren Umgang mit Waffe und Munition.',
-      'Die Prüfung wird über unseren Partner IPA Training abgenommen. Der praktische Teil – Handhabung und Schießen – findet in Präsenz auf einer zugelassenen Schießstätte statt, niemals online.',
-      'Für die Zulassung zur Prüfung gelten die Anforderungen des Waffengesetzes, insbesondere Mindestalter und persönliche Eignung. Wir prüfen das vor der Anmeldung, damit niemand eine Maßnahme beginnt, die er anschließend nicht abschließen kann.',
-    ],
-    sections: [
-      {
-        heading: 'Inhalte',
-        list: [
-          'Waffenrecht: Erlaubnispflichten, verbotene Gegenstände, Aufbewahrung, Transport',
-          'Notwehr und Nothilfe, Verhältnismäßigkeit, Grenzen des Waffengebrauchs',
-          'Waffentechnik und Funktionsweise, Ladehemmungen, Sicherheitsprüfung',
-          'Munitionskunde',
-          'Praktische Handhabung und Schießen auf zugelassener Schießstätte',
-        ],
-      },
-    ],
-  },
-
-  {
-    slug: 'brandschutzhelfer',
-    kicker: 'Zusatzqualifikation',
-    title: 'Brandschutzhelfer',
-    short: 'Brandschutzhelfer',
-    basis: 'ASR A2.2 / DGUV Information 205-023',
-    scope: 'Teil von Modul 10 (16 UE gemeinsam mit Evakuierungshilfe)',
+    title: 'Brandschutz- und Evakuierungshelfer',
+    short: 'Brandschutz- und Evakuierungshelfer',
+    basis: 'ASR A2.2 · DGUV Information 205-023 und 205-033',
+    scope: '16 Unterrichtseinheiten (Block C)',
     format: 'Theorie online, Löschübung in Präsenz',
-    result: 'Brandschutzhelfer-Zertifikat',
+    result: 'Brandschutz- und Evakuierungshelfer-Zertifikat',
     summary:
-      'Ausbildung zur Brandschutzhelferin und zum Brandschutzhelfer mit theoretischem Teil und praktischer Löschübung. Enthalten in der Hauptmaßnahme.',
+      'Brandschutzhilfe und Evakuierungshilfe in einem Baustein: Brandentstehung, Löschmittel, Räumung und Sammelstellen – mit praktischer Löschübung in Präsenz. Enthalten in der Hauptmaßnahme.',
     intro: [
-      'Jeder Betrieb muss eine ausreichende Zahl an Brandschutzhelferinnen und Brandschutzhelfern benennen. Wer diese Qualifikation mitbringt, ist für Sicherheitsdienstleister deutlich leichter einsetzbar – gerade im Objekt- und Werkschutz.',
-      'Der theoretische Teil behandelt Brandentstehung, Brandklassen, Verhalten im Brandfall und die betriebliche Brandschutzorganisation. Die praktische Löschübung mit dem Feuerlöscher findet in Präsenz bei unserem Partner statt.',
+      'Jeder Betrieb muss eine ausreichende Zahl an Brandschutz- und Evakuierungshelferinnen und -helfern benennen. Wer diese Qualifikation mitbringt, ist für Sicherheitsdienstleister deutlich leichter einsetzbar – gerade im Objekt- und Werkschutz.',
+      'Der theoretische Teil behandelt Brandentstehung, Brandklassen, Verhalten im Brandfall und die betriebliche Brandschutzorganisation sowie die Aufgabenverteilung im Räumungsfall. Die praktische Löschübung mit dem Feuerlöscher findet in Präsenz bei unserem Partner statt.',
     ],
     sections: [
       {
@@ -131,37 +141,10 @@ export const offers = [
           'Grundzüge des Brandschutzes, Brandentstehung und Brandklassen',
           'Betriebliche Brandschutzorganisation und Meldewege',
           'Funktion, Auswahl und Grenzen von Feuerlöscheinrichtungen',
-          'Gefahren durch Brände, Verhalten im Brandfall',
           'Praktische Löschübung in Präsenz',
-        ],
-      },
-    ],
-  },
-
-  {
-    slug: 'evakuierungshelfer',
-    kicker: 'Zusatzqualifikation',
-    title: 'Evakuierungshelfer',
-    short: 'Evakuierungshelfer',
-    basis: 'DGUV Information 205-033',
-    scope: 'Teil von Modul 10 (16 UE gemeinsam mit Brandschutzhilfe)',
-    format: 'Theorie online, Übung in Präsenz',
-    result: 'Evakuierungshelfer-Zertifikat',
-    summary:
-      'Räumung und Evakuierung von Gebäuden: Aufgaben, Meldewege, Sammelstellen und Umgang mit Menschen in Ausnahmesituationen.',
-    intro: [
-      'Evakuierungshelferinnen und Evakuierungshelfer führen im Ernstfall Menschen aus einem Gebäude – geordnet, vollständig und ohne Panik. In Einkaufszentren, Veranstaltungsorten und Verwaltungsgebäuden ist diese Rolle Teil der Sicherheitsorganisation.',
-      'Das Modul vermittelt die Aufgabenverteilung im Räumungsfall, Melde- und Kommunikationswege, Kennzeichnung von Fluchtwegen und Sammelstellen sowie den Umgang mit Personen, die Hilfe brauchen oder Anweisungen nicht befolgen.',
-    ],
-    sections: [
-      {
-        heading: 'Inhalte',
-        list: [
-          'Rollen und Zuständigkeiten im Räumungsfall',
-          'Alarmierung, Meldewege, Kommunikation unter Stress',
+          'Rollen und Zuständigkeiten im Räumungsfall, Alarmierung, Kommunikation unter Stress',
           'Flucht- und Rettungswege, Sammelstellen, Vollständigkeitskontrolle',
           'Menschen mit Einschränkungen und Personen, die nicht kooperieren',
-          'Übung in Präsenz gemeinsam mit der Brandschutzhilfe',
         ],
       },
     ],
@@ -173,14 +156,14 @@ export const offers = [
     title: 'Erste Hilfe / Ersthelfende Person gemäß DGUV',
     short: 'Erste Hilfe (DGUV)',
     basis: 'DGUV Vorschrift 1',
-    scope: '16 Unterrichtseinheiten (Modul 11)',
-    format: 'Praktische Ausbildung in Präsenz',
+    scope: '9 Unterrichtseinheiten (Block C)',
+    format: 'Praktischer Lehrgang in Präsenz',
     result: 'Nachweis als ersthelfende Person gemäß DGUV',
     summary:
-      'Ausbildung zur ersthelfenden Person nach den Vorgaben der DGUV, mit vollständigem Praxisanteil in Präsenz.',
+      'Lehrgang zur ersthelfenden Person nach den Vorgaben der DGUV, vollständig in Präsenz. Enthalten in der Hauptmaßnahme.',
     intro: [
-      'Im Sicherheitsdienst ist man häufig die erste Person am Ort eines Notfalls – vor Rettungsdienst und Feuerwehr. Deshalb ist die Ausbildung als ersthelfende Person kein Anhängsel, sondern ein eigenes Modul.',
-      'Erste Hilfe lässt sich nicht am Bildschirm lernen. Dieses Modul findet vollständig in Präsenz statt: Herz-Lungen-Wiederbelebung, Umgang mit dem Defibrillator, stabile Seitenlage, Wundversorgung, Umgang mit Schock und Kreislaufstörungen.',
+      'Im Sicherheitsdienst ist man häufig die erste Person am Ort eines Notfalls – vor Rettungsdienst und Feuerwehr. Deshalb ist dieser Baustein kein Anhängsel, sondern ein eigener Teil des Curriculums.',
+      'Erste Hilfe lässt sich nicht am Bildschirm lernen. Der Baustein findet vollständig in Präsenz statt: Herz-Lungen-Wiederbelebung, Umgang mit dem Defibrillator, stabile Seitenlage, Wundversorgung, Umgang mit Schock und Kreislaufstörungen.',
     ],
     sections: [
       {
@@ -191,6 +174,40 @@ export const offers = [
           'Herz-Lungen-Wiederbelebung und Anwendung des AED',
           'Wunden, Blutungen, Verbrennungen, Knochenbrüche',
           'Schock, Kreislauf- und Atemstörungen',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'awareness-veranstaltungen',
+    kicker: 'Zusatzqualifikation',
+    title: 'Awareness bei Veranstaltungen',
+    short: 'Awareness (Veranstaltungen)',
+    /* Fuer diesen Baustein gibt es keine gesetzliche Grundlage – das steht
+       hier bewusst so, statt eine Norm zu erfinden. */
+    basis: 'Curriculum ProVita Akademie (Block C)',
+    scope: '36 Unterrichtseinheiten (Block C)',
+    format: 'Live online in Kleingruppen',
+    result: 'Teilnahmenachweis Awareness der ProVita Akademie',
+    summary:
+      'Umgang mit Grenzverletzungen, Diskriminierung und Notlagen im Veranstaltungsbetrieb: erkennen, ansprechen, weiterleiten. Enthalten in der Hauptmaßnahme.',
+    intro: [
+      'Sicherheitskräfte auf Veranstaltungen sind für Gäste oft die einzige ansprechbare Stelle, wenn etwas schiefgeht – bei Belästigung, bei Diskriminierung, bei einer Panikreaktion oder bei einer Person, die Hilfe braucht und nicht danach fragen kann.',
+      'Der Baustein vermittelt, solche Situationen früh zu erkennen, sie ohne Eskalation anzusprechen und sie an die richtige Stelle weiterzugeben – an den Veranstalter, an den Sanitätsdienst oder an die Polizei. Er ersetzt keine psychologische Ausbildung und behauptet das auch nicht.',
+      'Abgeschlossen wird der Baustein mit einem Teilnahmenachweis der ProVita Akademie. Eine staatliche oder kammergeprüfte Anerkennung gibt es für Awareness-Qualifikationen nicht.',
+    ],
+    sections: [
+      {
+        heading: 'Inhalte',
+        list: [
+          'Aufgaben und Grenzen einer Awareness-Rolle im Sicherheitsdienst',
+          'Grenzverletzungen und Belästigung erkennen und ansprechen',
+          'Diskriminierung, Vorurteile und eigene Wahrnehmung',
+          'Umgang mit Betroffenen: zuhören, nicht ausfragen, nicht bewerten',
+          'Meldewege und Zusammenarbeit mit Veranstalter, Sanitätsdienst und Polizei',
+          'Vulnerable Personengruppen, Menschen in Ausnahmesituationen, Alkohol und Drogen',
+          'Dokumentation eines Vorfalls unter Beachtung des Datenschutzes',
         ],
       },
     ],

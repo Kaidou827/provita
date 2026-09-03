@@ -3,7 +3,7 @@ import Seo from '../components/Seo.jsx';
 import PageShell from '../components/PageShell.jsx';
 import { site, fullAddress } from '../data/site.js';
 import { leitbild } from '../data/leitbild.js';
-import { totalUe } from '../data/curriculum.js';
+import { totalUeLabel, practicalPhase } from '../data/curriculum.js';
 import { paths } from '../routes.js';
 
 export default function UeberUns() {
@@ -40,15 +40,16 @@ export default function UeberUns() {
             Es gibt Bildungsträger mit vierzig Kursen im Katalog. Wir haben einen. Das ist eine
             Entscheidung, keine Einschränkung: Wer die Sachkundeprüfung nach § 34a GewO wirklich
             beherrscht, kennt jede Frage, die die IHK in den letzten Jahren gestellt hat, weiß, an
-            welchen zwei Modulen die meisten Menschen scheitern, und kann Modul 12 – vierzig
-            Unterrichtseinheiten reine Prüfungsvorbereitung – genau darauf ausrichten.
+            welchen Themen die meisten Menschen scheitern, und kann die 400 Unterrichtseinheiten in
+            Block A genau darauf ausrichten.
           </p>
           <p className="u-prose">
-            Aus derselben Haltung stammt der Aufbau der Maßnahme. Wir hätten es bei den {totalUe}{' '}
-            Unterrichtseinheiten Sachkunde belassen können. Stattdessen sind Waffensachkunde,
-            Brandschutzhilfe, Evakuierungshilfe und Erste Hilfe fest integriert – weil das die
-            Nachweise sind, die in Stellenanzeigen zusätzlich verlangt werden. Wer einen Kurs abschließt,
-            soll damit auch eingestellt werden.
+            Aus derselben Haltung stammt der Aufbau der Maßnahme. Wir hätten es bei der Sachkunde
+            belassen können. Stattdessen umfasst sie {totalUeLabel} Unterrichtseinheiten: die
+            Teilqualifikation 1 nach dem Ausbildungsrahmenplan Fachkraft für Schutz und Sicherheit,
+            Brandschutz- und Evakuierungshilfe, Erste Hilfe, Awareness – und {practicalPhase.hours}{' '}
+            Stunden betriebliche Lernphase im Sicherheitsunternehmen. Wer einen Kurs abschließt, soll
+            damit auch eingestellt werden.
           </p>
         </section>
 

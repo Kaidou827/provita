@@ -3,7 +3,7 @@ import Seo from '../components/Seo.jsx'
 import PageShell from '../components/PageShell.jsx'
 import ModuleLedger from '../components/ModuleLedger.jsx'
 import { offers, leadOffer } from '../data/offers.js'
-import { totalUe, modules } from '../data/curriculum.js'
+import { totalUeLabel, blocks, practicalPhase } from '../data/curriculum.js'
 import { site } from '../data/site.js'
 import { paths } from '../routes.js'
 
@@ -14,16 +14,19 @@ export default function Massnahmen() {
     <>
       <Seo
         title="Maßnahmen"
-        description={`Alle Maßnahmen der ${site.academy}: Vorbereitung auf die IHK-Sachkundeprüfung § 34a GewO mit ${totalUe} Unterrichtseinheiten sowie vier integrierte Zusatzqualifikationen.`}
+        description={`Alle Maßnahmen der ${site.academy}: Fachkraft für Schutz und Sicherheit – Teilqualifikation 1 „Personen- und Objektschutz“ mit ${totalUeLabel} Unterrichtseinheiten, IHK-Sachkundeprüfung § 34a GewO und ${practicalPhase.hours} Stunden betrieblicher Lernphase.`}
       />
 
       <PageShell
         eyebrow="Maßnahmen"
         meta={[
           { label: 'Fachbereiche', value: 'AZAV Fachbereich 1 und 4' },
-          { label: 'Umfang', value: `${totalUe} UE in ${modules.length} Modulen` },
-          { label: 'Lernform', value: 'Theorie online, Praxis in Präsenz' },
-          { label: 'Ort', value: `${site.address.city} und Partnerstandorte` },
+          {
+            label: 'Umfang',
+            value: `${totalUeLabel} UE in ${blocks.length} Blöcken · ${practicalPhase.hours} Std. Betrieb`,
+          },
+          { label: 'Lernform', value: 'Theorie online, Praxisbausteine in Präsenz' },
+          { label: 'Ort', value: `${site.address.city}, Partnerstandorte und Betrieb` },
           { label: 'Zulassung', value: site.azav.statusShort },
         ]}
       >
@@ -31,18 +34,20 @@ export default function Massnahmen() {
           <h1>Eine Maßnahme, fünf Nachweise.</h1>
           <p className="u-lead" style={{ marginTop: 'var(--s-5)' }}>
             Wir bieten bewusst kein breites Kursprogramm an. Wir machen eine Sache, und die
-            vollständig: die Qualifizierung für den Einstieg in das Bewachungsgewerbe. Alles
-            Weitere auf dieser Seite ist Teil derselben Maßnahme.
+            vollständig: die Teilqualifikation 1 „Personen- und Objektschutz“ mit der
+            Sachkundeprüfung nach § 34a GewO. Alles Weitere auf dieser Seite ist Teil derselben
+            Maßnahme.
           </p>
         </div>
 
         <div className="notice">
-          <p className="notice__title">Zur Wortwahl</p>
+          <p className="notice__title">Teilqualifikation, kein Berufsabschluss</p>
           <p>
-            Streng genommen bieten wir keine „Ausbildung“ an, sondern eine Qualifizierungsmaßnahme
-            mit Prüfungsvorbereitung. Eine Ausbildung im Sinne des Berufsbildungsgesetzes – etwa
-            zur Fachkraft für Schutz und Sicherheit – ist etwas anderes. Genau so ist es auch in
-            unserem Curriculum formuliert.
+            Die Maßnahme folgt dem Ausbildungsrahmenplan des Ausbildungsberufs Fachkraft für Schutz
+            und Sicherheit und schließt die erste von mehreren Teilqualifikationen ab. Ein
+            Berufsabschluss im Sinne des Berufsbildungsgesetzes ist damit nicht erreicht – dafür
+            braucht es weitere Teilqualifikationen und die Abschlussprüfung vor der IHK. Wir sagen
+            das hier deutlich, weil der Unterschied gegenüber Arbeitgeber und Kostenträger zählt.
           </p>
         </div>
 
@@ -65,8 +70,9 @@ export default function Massnahmen() {
         <div>
           <h2 style={{ marginBottom: 'var(--s-3)' }}>Enthaltene Zusatzqualifikationen</h2>
           <p className="u-prose" style={{ marginBottom: 'var(--s-5)' }}>
-            Diese vier Qualifikationen sind Bestandteil der Hauptmaßnahme und kosten nichts extra.
-            Sie sind hier einzeln aufgeführt, weil Arbeitgeber sie einzeln abfragen.
+            Diese {extras.length} Qualifikationen sind Bestandteil der Hauptmaßnahme (Block C) und
+            kosten nichts extra. Sie sind hier einzeln aufgeführt, weil Arbeitgeber sie einzeln
+            abfragen.
           </p>
           <div className="cards">
             {extras.map((offer) => (

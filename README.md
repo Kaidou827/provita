@@ -18,7 +18,7 @@ Alles Rechtsverbindliche steht in **einer** Datei: `src/data/site.js`.
 | Punkt | Stand |
 |---|---|
 | Trägergesellschaft | Im Leitbild steht **WEEQ UG (haftungsbeschränkt)**, im Code steht **ProVita GmbH**. Impressum, AZAV-Zulassung und jedes Zertifikat müssen dieselbe Gesellschaft nennen. |
-| Telefonnummer | Platzhalter `+49 2102 000000` |
+| Leitbild-DOCX vs. Website | Die DOCX weicht an drei Stellen ab (Träger, AZAV-Status, Wort „Ausbildung“) – siehe Kopf von `src/data/leitbild.js`. DOCX nachziehen. |
 | Registergericht und HRB-Nummer | offen |
 | USt-IdNr. | offen |
 | Zuständige fachkundige Stelle (AZAV) | offen |
@@ -31,18 +31,29 @@ danach löschen.
 
 ### AZAV-Status
 
-`site.azav.certified` steht auf `false`. Solange das so ist, erscheint an
-allen Stellen „Trägerzulassung nach AZAV in Vorbereitung“ – nirgends
-„AZAV-zertifiziert“. Nach erteilter Zulassung nur `site.azav` anpassen, die
-Texte auf Startseite, Maßnahmenseiten und im Fuß ziehen automatisch nach.
+In `src/data/site.js` steht oben **ein** Schalter: `const azavCertified`.
+Er steht auf `false`, weil das Leitbild vom „Prozess der AZAV-Zertifizierung“
+spricht und die zuständige fachkundige Stelle noch offen ist. Solange er auf
+`false` steht, erscheint überall „Im AZAV-Zulassungsverfahren“ – nirgends
+„zugelassen“, und die Förderung über Bildungsgutschein steht unter dem
+Vorbehalt der erteilten Zulassung.
+
+Liegt der Zulassungsbescheid vor: Schalter auf `true` und die fachkundige
+Stelle im Impressum ergänzen. Die Texte auf Startseite, Maßnahmenseiten,
+Über uns und im Fuß ziehen automatisch nach.
 
 ### Wortwahl
 
-Die Seite sagt durchgehend „Qualifizierungsmaßnahme mit
-Prüfungsvorbereitung“, nie „Ausbildung“. Eine Ausbildung im Sinne des BBiG
-(z. B. Fachkraft für Schutz und Sicherheit) ist etwas anderes. Bitte auch
-bei künftigen Texten beibehalten – gegenüber Auditor und Kostenträger ist das
-der entscheidende Unterschied.
+Die Maßnahme ist eine **Teilqualifikation** nach dem Ausbildungsrahmenplan des
+Ausbildungsberufs Fachkraft für Schutz und Sicherheit – kein Berufsabschluss.
+Die Seite sagt das an drei Stellen ausdrücklich (Startseite Transparenz,
+Maßnahmenübersicht, Detailseite). Bitte beibehalten: „Teilqualifikation“ ja,
+„Ausbildung“ oder „Berufsabschluss“ nein. Gegenüber Auditor und Kostenträger
+ist das der entscheidende Unterschied.
+
+Die **Waffensachkunde nach § 7 WaffG ist nicht Teil der Maßnahme.** Sie wurde
+bewusst überall entfernt; nicht wieder aufnehmen, ohne dass sie im Curriculum
+und in der Zulassung steht.
 
 ---
 
@@ -52,9 +63,10 @@ der entscheidende Unterschied.
 src/
   routes.js              Seitenverzeichnis – Navigation UND Brotkrumen lesen hier
   data/
-    site.js              Träger, Anschrift, Kontakt, AZAV-Status, QM-Team
-    curriculum.js        12 Module, 320 UE, Präsenz-Kennzeichnung
-    offers.js            Hauptmaßnahme + 4 Zusatzqualifikationen (Inhalt der Unterseiten)
+    site.js              Träger, Anschrift, Kontakt, AZAV-Schalter, QM-Team
+    leitbild.js          Leitbild im Volltext (steht auf /ueber-uns, nicht nur als DOCX)
+    curriculum.js        4 Blöcke A–D, 1.048 UE, 160 Std. Betrieb, Präsenz-Kennzeichnung
+    offers.js            Hauptmaßnahme (TQ 1) + 3 Zusatzqualifikationen (Inhalt der Unterseiten)
   styles/
     tokens.css           Farben, Typo-Skala, Raster
     base.css             Reset, Typografie, Fokus

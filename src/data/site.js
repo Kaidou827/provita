@@ -11,6 +11,20 @@
    (inkl. Registergericht, HRB-Nummer, USt-IdNr.) und lösche, was nicht passt.
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   AZAV-Zulassungsstand. EIN Schalter, der alle Status- und Fördertexte der
+   Seite umstellt.
+
+   Auf `true` erst dann, wenn der Zulassungsbescheid der fachkundigen Stelle
+   tatsächlich vorliegt – vorher darf nirgends "zugelassen" stehen. Das
+   Leitbild (Stand 29.07.2026) spricht vom "Prozess der AZAV-Zertifizierung"
+   und die zuständige fachkundige Stelle ist im Impressum noch offen; deshalb
+   steht der Schalter auf `false`. Liegt der Bescheid vor: hier auf `true`
+   setzen und die fachkundige Stelle im Impressum ergänzen – die Texte auf
+   Startseite, Maßnahmenseiten, Über uns und im Fuß ziehen automatisch nach.
+   -------------------------------------------------------------------------- */
+const azavCertified = false;
+
 export const site = {
   academy: 'ProVita Akademie',
 
@@ -38,12 +52,28 @@ export const site = {
     hours: 'Mo–Fr, 09:00–16:00 Uhr',
   },
 
-  /* AZAV-Status. Bei certified: true erscheinen die positiven Status-Texte. */
+  /* AZAV-Status. Alle Texte hängen an azavCertified (siehe oben). */
   azav: {
-    certified: true,
-    statusShort: 'Trägerzulassung nach AZAV erteilt',
-    statusLong:
-      'Die ProVita Akademie ist nach AZAV zugelassen für Fachbereich 1 (Aktivierung und berufliche Eingliederung) und Fachbereich 4 (Berufliche Weiterbildung). Eine Förderung über Aktivierungs- und Vermittlungsgutschein oder Bildungsgutschein ist möglich.',
+    certified: azavCertified,
+
+    statusShort: azavCertified
+      ? 'Trägerzulassung nach AZAV erteilt'
+      : 'Im AZAV-Zulassungsverfahren',
+
+    statusLong: azavCertified
+      ? 'Die ProVita Akademie ist nach AZAV zugelassen für Fachbereich 1 (Aktivierung und berufliche Eingliederung) und Fachbereich 4 (Berufliche Weiterbildung). Die Maßnahme ist eine Maßnahme der beruflichen Weiterbildung; eine Förderung über Bildungsgutschein nach §§ 81 ff. SGB III ist möglich.'
+      : 'Die ProVita Akademie befindet sich im AZAV-Zulassungsverfahren bei der fachkundigen Stelle – für Fachbereich 1 (Aktivierung und berufliche Eingliederung) und Fachbereich 4 (Berufliche Weiterbildung). Die Maßnahme ist als Maßnahme der beruflichen Weiterbildung angelegt; eine Förderung über Bildungsgutschein nach §§ 81 ff. SGB III ist ab erteilter Zulassung möglich. Bis dahin behaupten wir sie nicht.',
+
+    /* Vollständiger Satz – für Fließtext, z. B. im Leitbild. */
+    statusSentence: azavCertified
+      ? 'Die Trägerzulassung nach AZAV für die Fachbereiche 1 und 4 ist erteilt.'
+      : 'Für die Fachbereiche 1 und 4 läuft das Zulassungsverfahren nach AZAV bei der fachkundigen Stelle.',
+
+    /* Kurzer Förderhinweis für Kacheln und Fußzeile. */
+    fundingShort: azavCertified
+      ? 'Förderung über Bildungsgutschein möglich'
+      : 'Förderung über Bildungsgutschein ab erteilter Zulassung',
+
     fields: [
       {
         code: 'Fachbereich 1',
@@ -53,7 +83,7 @@ export const site = {
       {
         code: 'Fachbereich 4',
         title: 'Fort- und Weiterbildung',
-        text: 'Berufliche Weiterbildung mit anerkanntem Abschluss – bei uns die Vorbereitung auf die IHK-Sachkundeprüfung nach § 34a GewO samt integrierter Zusatzqualifikationen.',
+        text: 'Berufliche Weiterbildung mit Kammerprüfung – bei uns die Teilqualifikation 1 „Personen- und Objektschutz“ nach dem Ausbildungsrahmenplan Fachkraft für Schutz und Sicherheit, inklusive Vorbereitung auf die IHK-Sachkundeprüfung nach § 34a GewO.',
       },
     ],
   },

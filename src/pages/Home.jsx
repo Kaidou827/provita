@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo.jsx';
 import FactStrip from '../components/FactStrip.jsx';
 import ModuleLedger from '../components/ModuleLedger.jsx';
-import { facts, totalUe } from '../data/curriculum.js';
+import { facts, totalUeLabel, practicalPhase } from '../data/curriculum.js';
 import { offers, leadOffer } from '../data/offers.js';
 import { site } from '../data/site.js';
 import { paths } from '../routes.js';
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Seo
-        description={`${site.academy}: ${totalUe} Unterrichtseinheiten Vorbereitung auf die IHK-Sachkundeprüfung nach § 34a GewO mit vier integrierten Zusatzqualifikationen. Theorie live online, Praxis in Präsenz.`}
+        description={`${site.academy}: Fachkraft für Schutz und Sicherheit – Teilqualifikation 1 „Personen- und Objektschutz“ mit ${totalUeLabel} Unterrichtseinheiten, IHK-Sachkundeprüfung nach § 34a GewO und ${practicalPhase.hours} Stunden betrieblicher Lernphase. Theorie live online, Praxisbausteine in Präsenz.`}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'EducationalOrganization',
@@ -35,17 +35,23 @@ export default function Home() {
       <section className="wrap hero">
         <p className="hero__eyebrow">
           <span className="hero__eyebrow-dot" aria-hidden="true" />
-          <span className="u-label">Bewachungsgewerbe · Qualifizierung · Ratingen</span>
+          <span className="u-label">Berufliche Weiterbildung · Teilqualifikation · Ratingen</span>
         </p>
 
         <h1 className="hero__title">
-          Vorbereitung auf die IHK-Sachkundeprüfung nach <em>§&nbsp;34a</em> GewO.
+          Fachkraft für Schutz und Sicherheit – <em>Teilqualifikation&nbsp;1</em> „Personen- und
+          Objektschutz“.
         </h1>
 
+        <p className="u-label" style={{ marginTop: 'var(--s-4)' }}>
+          inkl. Vorbereitung auf die IHK-Sachkundeprüfung nach § 34a GewO
+        </p>
+
         <p className="hero__lead">
-          {totalUe} Unterrichtseinheiten in zwölf Modulen – mit Waffensachkunde, Brandschutz,
-          Evakuierungshilfe und Erster Hilfe im selben Kurs. Theorie live online, Praxis vor Ort.
-          Anmeldung zur Prüfung bei der IHK übernehmen wir.
+          {totalUeLabel} Unterrichtseinheiten plus {practicalPhase.hours} Stunden betriebliche
+          Lernphase – Teilqualifikation nach dem Ausbildungsrahmenplan Fachkraft für Schutz und
+          Sicherheit, mit Sachkundeprüfung § 34a, Brandschutz-/Evakuierungshelfer und Erster Hilfe.
+          Theorie live online, Praxisbausteine in Präsenz, Praktikum im Betrieb.
         </p>
 
         <div className="btn-row hero__actions">
@@ -69,9 +75,10 @@ export default function Home() {
             <span className="sec-head__eyebrow">Curriculum</span>
             <h2>Das gesamte Curriculum, offen einsehbar.</h2>
             <p>
-              Andere Anbieter legen den Stundenplan hinter ein Anmeldeformular. Hier stehen alle zwölf
-              Module mit ihrem Umfang – damit Sie und Ihre Vermittlungsfachkraft vor der Entscheidung
-              wissen, was in den {totalUe} Unterrichtseinheiten tatsächlich passiert.
+              Andere Anbieter legen den Stundenplan hinter ein Anmeldeformular. Hier stehen alle vier
+              Blöcke mit jedem Baustein und seinem Umfang – damit Sie und Ihre Vermittlungsfachkraft
+              vor der Entscheidung wissen, was in den {totalUeLabel} Unterrichtseinheiten tatsächlich
+              passiert.
             </p>
           </div>
           <ModuleLedger />
@@ -85,11 +92,24 @@ export default function Home() {
             <span className="sec-head__eyebrow">Abschlüsse</span>
             <h2>Fünf Nachweise aus einer Maßnahme.</h2>
             <p>
-              Das Hauptziel ist die Sachkundeprüfung. Die vier Zusatzqualifikationen sind im Kurs
-              enthalten und kosten nichts extra – es sind genau jene Nachweise, die Sicherheitsdienstleister
-              in Stellenanzeigen zusätzlich verlangen.
+              Das Hauptziel ist die Teilqualifikation mit Kompetenzfeststellung, dazu die
+              Sachkundeprüfung nach § 34a GewO. Die Zusatzqualifikationen sind im Kurs enthalten und
+              kosten nichts extra – es sind genau jene Nachweise, die Sicherheitsdienstleister in
+              Stellenanzeigen zusätzlich verlangen.
             </p>
           </div>
+
+          <ol className="steps" style={{ marginBottom: 'var(--s-8)' }}>
+            {leadOffer.results.map((result, i) => (
+              <li key={result.title}>
+                <span className="steps__no u-num">{String(i + 1).padStart(2, '0')}</span>
+                <div className="steps__body">
+                  <h4>{result.title}</h4>
+                  <p>{result.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
 
           <div className="cards">
             <Link to={paths.offer(leadOffer.slug)} className="card card--lead">
@@ -141,15 +161,18 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h3>Praxis: Präsenz bei unseren Partnern</h3>
+              <h3>Praxis: Präsenz und Betrieb</h3>
               <p>
-                Schießen lernt man nicht am Bildschirm, einen Feuerlöscher bedient man nicht per Webcam, und
-                eine Herzdruckmassage muss man in den Händen gehabt haben. Die Praxisanteile der Module 6, 10
-                und 11 laufen deshalb in Präsenz bei unseren Partnereinrichtungen.
+                Einen Feuerlöscher bedient man nicht per Webcam, und eine Herzdruckmassage muss man in den
+                Händen gehabt haben. Die Bausteine Brandschutz (Löschübung) und Erste Hilfe finden deshalb in
+                Präsenz bei unseren Partnereinrichtungen statt; alle übrigen Praxisanteile laufen live online
+                in Kleingruppen.
               </p>
               <p>
-                Die Waffensachkundeprüfung nach § 7 WaffG nimmt IPA Training ab. Alle Präsenztermine stehen zu
-                Kursbeginn fest, damit Sie Fahrt und Betreuung planen können.
+                Die betriebliche Lernphase absolvieren die Teilnehmenden in Sicherheitsunternehmen der Region –
+                {' '}{practicalPhase.hours} Stunden, etwa {practicalPhase.weeks} Wochen. Alle Präsenztermine
+                und der Zeitraum des Praktikums stehen zu Kursbeginn fest, damit Sie Fahrt und Betreuung planen
+                können.
               </p>
             </div>
           </div>
@@ -201,20 +224,29 @@ export default function Home() {
             <div className="specs__row">
               <dt>Bestehensgarantie</dt>
               <dd>
-                Gibt es nicht. Die IHK prüft, nicht wir. Modul 12 besteht ausschließlich aus Wiederholung und
-                Prüfungsvorbereitung, und bei Zwischenstandsgesprächen sagen wir früh, wenn es knapp wird.
+                Gibt es nicht. Die Sachkundeprüfung nimmt die IHK ab, nicht wir. Block A ist vollständig auf
+                diese Prüfung ausgerichtet, und bei Zwischenstandsgesprächen sagen wir früh, wenn es knapp
+                wird.
               </dd>
             </div>
             <div className="specs__row">
-              <dt>Wortwahl</dt>
+              <dt>Teilqualifikation, kein Berufsabschluss</dt>
               <dd>
-                Wir nennen das hier eine Qualifizierungsmaßnahme mit Prüfungsvorbereitung, keine „Ausbildung“.
-                Eine Ausbildung im Sinne des Berufsbildungsgesetzes – etwa Fachkraft für Schutz und Sicherheit –
-                ist etwas anderes und dauert Jahre.
+                Die Maßnahme führt zur Teilqualifikation 1 nach dem Ausbildungsrahmenplan Fachkraft für Schutz
+                und Sicherheit – nicht zum Berufsabschluss. Der volle Abschluss im Sinne des
+                Berufsbildungsgesetzes setzt weitere Teilqualifikationen und die Abschlussprüfung vor der IHK
+                voraus. Dieser Weg bleibt offen, ist mit dieser Maßnahme aber nicht zurückgelegt.
               </dd>
             </div>
             <div className="specs__row">
-              <dt>AZAV-Zulassung</dt>
+              <dt>Waffen</dt>
+              <dd>
+                Nicht Teil dieser Maßnahme. Eine Waffensachkunde nach § 7 WaffG bieten wir hier nicht an und
+                stellen dafür auch keinen Nachweis aus.
+              </dd>
+            </div>
+            <div className="specs__row">
+              <dt>AZAV-Zulassung und Förderung</dt>
               <dd>{site.azav.statusLong}</dd>
             </div>
           </dl>

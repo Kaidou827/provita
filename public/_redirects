@@ -1,1 +1,11 @@
+# Alte Maßnahmen-URLs auf die neue Teilqualifikation umleiten.
+# Reihenfolge zählt: spezifische Regeln vor dem SPA-Fallback.
+/massnahmen/sachkundepruefung-34a    /massnahmen/fachkraft-schutz-sicherheit-tq1    301
+/massnahmen/brandschutzhelfer        /massnahmen/brandschutz-evakuierungshelfer     301
+/massnahmen/evakuierungshelfer       /massnahmen/brandschutz-evakuierungshelfer     301
+# Waffensachkunde ist nicht mehr Teil des Angebots – zurück zur Übersicht.
+/massnahmen/waffensachkunde-7-waffg  /massnahmen                                    301
+
+# SPA-Fallback: alle übrigen Pfade an index.html, sonst laufen Unterseiten
+# bei direktem Aufruf oder Reload in einen 404 des Servers (u. a. /ueber-uns).
 /*    /index.html   200
